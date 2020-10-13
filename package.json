@@ -17,7 +17,7 @@
   "scripts": {
     "dev": "react-scripts start",
     "start": "serve ./build -s -p ${PORT:-4000}",
-    "build": "rm -rf build && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev:ngrok": "ngrok http ${PORT:-4000}"
