@@ -1,0 +1,10 @@
+version: "3.5"
+services:
+  front-app:
+    build: .
+    image: platzi-recetas:latest
+    container_name: platzi-recetas-local
+    ports:
+      - "4000:4000"
+    environment:
+      - PORT=4000
