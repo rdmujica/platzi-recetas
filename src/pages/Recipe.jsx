@@ -20,16 +20,18 @@ const Recipe = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (isLoading) {
-    return <div className="message">Cargando...</div>;
-  } else if (recipe === null) {
-    return <div className="message">Hubo un problema </div>;
-  }
+  if (isLoading) return <div className="message">Cargando...</div>;
+
+  if (recipe === null) return <div className="message">Hubo un problema </div>;
 
   return (
     <div className="Recipe">
       <Helmet>
         <title>{recipe.name}</title>
+        <meta
+          name="description"
+          content={`Recetas con ingredientes preparacion ${recipe.name} ${recipe.origin}`}
+        />
       </Helmet>
 
       <div

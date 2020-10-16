@@ -25,6 +25,10 @@ const Home = () => {
     <div>
       <Helmet>
         <title>Recetas</title>
+        <meta
+          name="description"
+          content="Recetas con ingredientes preparacion"
+        />
       </Helmet>
 
       <div className="recipes">
