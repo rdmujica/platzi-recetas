@@ -8,21 +8,18 @@
     "@testing-library/user-event": "^7.1.2",
     "isomorphic-fetch": "3.0.0",
     "react": "^16.13.1",
-    "react-app-rewire-workbox": "^2.0.1",
-    "react-app-rewired": "^2.1.6",
     "react-dom": "^16.13.1",
     "react-helmet": "6.1.0",
     "react-router-dom": "5.2.0",
     "react-scripts": "3.4.3",
-    "serve": "^11.3.2",
-    "workbox-webpack-plugin": "^5.1.4"
+    "serve": "^11.3.2"
   },
   "scripts": {
-    "dev": "react-app-rewired start",
+    "dev": "react-scripts start",
     "start": "serve ./build -s -p ${PORT:-4000}",
-    "start:default": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
+    "build-sw": "node ./src/sw-build.js",
+    "build": "react-scripts build && npm run build-sw",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev:ngrok": "npx ngrok http ${PORT:-4000}"
   },
@@ -40,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "workbox-build": "5.1.4"
   }
 }
