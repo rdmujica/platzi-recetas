@@ -34,10 +34,9 @@ const Recipe = (props) => {
         />
       </Helmet>
 
-      <div
-        className="hero"
-        style={{ backgroundImage: `url(${recipe.thumbnail})` }}
-      />
+      <section className="hero">
+        <img crossorigin="anonymous" src={`${recipe.thumbnail}`} alt="images" />
+      </section>
 
       <div className="title">
         <div className="info">
