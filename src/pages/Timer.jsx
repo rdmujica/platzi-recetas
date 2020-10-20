@@ -5,6 +5,17 @@ const Timer = () => {
   const [timeLeft, setTimeLeft] = useState(0);
 
   const start = async () => {
+    if (!("Notification" in window) || !("serviceWorker" in navigator))
+      return alert("Tu browser no soporta notificaciones");
+
+    if (Notification.permission === "default")
+      await Notification.requestPermission();
+
+    if (Notification.permission === "blocked")
+      return alert("Bloqueastes las notificaciones!!!");
+
+    if (Notification.permission !== "granted") return;
+
     let timerValue = timer;
     setTimeLeft(timerValue);
     const countdownInterval = setInterval(() => {
@@ -18,7 +29,12 @@ const Timer = () => {
   };
 
   const showNotification = async () => {
-    // TODO: Por definir
+    const registration = await navigator.serviceWorker.getRegistration();
+    if (!registration) return alert("No hay un Service Worker :(");
+    registration.showNotification("Listo el timer!", {
+      body: "Ding ding ding",
+      icon: "./icon.png"
+    });
   };
 
   const handleChange = (event) => {

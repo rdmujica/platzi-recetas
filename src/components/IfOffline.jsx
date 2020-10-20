@@ -1,6 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const IfOffline = ({ children }) => {
   const [online, setOnline] = useState(navigator ? navigator.onLine : true);

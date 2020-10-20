@@ -22,7 +22,10 @@ const App = () => (
     <div>
       <header>
         <Link to="/">
-          Recetas<IfOffline>Offline :-/</IfOffline>
+          Recetas<IfOffline>"Offline"</IfOffline>
+        </Link>
+        <Link to="/timer" className="timerLink">
+          ⏱
         </Link>
       </header>
       <main>
