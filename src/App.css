@@ -72,19 +72,8 @@ main {
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
 }
 .recipe .bg {
-  display: block;
-  padding-bottom: 40%;
-  background-position: 50% 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #cccccc;
-  border-top-right-radius: 6px;
-  border-top-left-radius: 6px;
-}
-
-.recipe .bg-img {
   width: 100%;
-  height: 20vh;
+  max-height: 150px;
   display: block;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
@@ -92,6 +81,7 @@ main {
 }
 
 .recipe .info {
+  height: 58px;
   display: block;
   padding: 20px;
   background: #a36a00;

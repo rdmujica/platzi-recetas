@@ -35,17 +35,12 @@ const Home = () => {
         {recipes &&
           recipes.map(({ id, name, thumbnail }) => (
             <Link to={`/recipe/${id}`} className="recipe" key={id}>
-              <span
+              <img
                 className="bg"
-                style={{ backgroundImage: `url(${thumbnail})` }}
-              ></span>
-
-              {/* <img
-                className="bg"
-                crossorigin="anonymous"
+                crossOrigin="anonymous"
                 src={`${thumbnail}`}
                 alt="images"
-              /> */}
+              />
               <span className="info">
                 <h2>{name}</h2>
               </span>
